@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System;
+
+
 namespace DSA.Graph
 {
    /// <summary>
@@ -13,13 +16,12 @@ namespace DSA.Graph
       /// The graph nodes.
       /// </value>
       IEnumerable<IGraphNode<T>> Nodes { get; }
-     
+
       /// <summary>
-      /// Gets the root.
+      /// Gets the neighbors of a given node.
       /// </summary>
-      /// <value>
-      /// The root.
-      /// </value>
-      IGraphNode<T> Root { get; }
+      /// <returns>The neighbors of a given node.</returns>
+      /// <param name="node">The node to get the neighbors of</param>
+      IEnumerable<IGraphEdge<T>> GetNeighbors(IGraphNode<T> node);
    }
 }

@@ -1,4 +1,6 @@
-﻿namespace DSA.Graph
+﻿using System;
+
+namespace DSA.Graph
 {
    /// <summary>
    /// Represents an edge in a graph
@@ -6,7 +8,6 @@
    /// <typeparam name="T">The type associated with the graph nodes</typeparam>
    public interface IGraphEdge<T>
    {
-
       /// <summary>
       /// Gets the start of the graph edge
       /// </summary>
@@ -22,6 +23,12 @@
       /// The end.
       /// </value>
       IGraphNode<T> End { get; }
+
+      /// <summary>
+      /// Gets the weight.
+      /// </summary>
+      /// <value>The weight.</value>
+      int Weight { get; }
      
       /// <summary>
       /// Gets a value indicating whether this graph edge is directed.

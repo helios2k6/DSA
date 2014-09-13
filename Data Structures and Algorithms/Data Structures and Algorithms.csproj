@@ -44,8 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dictionary\ArrayDictionary.cs" />
-    <Compile Include="Trees\AVLTree.cs" />
-    <Compile Include="Trees\IBinarySearchTree.cs" />
+    <Compile Include="Graph\IGraph.cs" />
+    <Compile Include="Graph\IGraphEdge.cs" />
+    <Compile Include="Graph\INode.cs" />
+    <Compile Include="Graph\IWeightedGraphEdge.cs" />
+    <Compile Include="Tree\AVLTree.cs" />
+    <Compile Include="Tree\IBinarySearchTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

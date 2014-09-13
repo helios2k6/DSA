@@ -500,9 +500,12 @@ namespace DSA.Tree
          var previousRoot = _root;
          var parentNode = focus.Parent;
          var balanceFactor = focus.BalanceFactor;
+         var didRebalance = false;
 
          if (balanceFactor < -1)
          {
+            didRebalance = true;
+
             //Right side is heavy
             if (focus.Right.BalanceFactor > 0)
             {
@@ -512,10 +515,11 @@ namespace DSA.Tree
 
             //Right-Right case
             RotateLeft(focus);
-
          }
          else if (balanceFactor > 1)
          {
+            didRebalance = true;
+
             //Left side is heavy
             if (focus.Left.BalanceFactor < 0)
             {
@@ -527,7 +531,7 @@ namespace DSA.Tree
             RotateRight(focus);
          }
 
-         if(ReferenceEquals(previousRoot, focus))
+         if(ReferenceEquals(previousRoot, focus) && didRebalance)
          {
             _root = focus.Parent;
          }

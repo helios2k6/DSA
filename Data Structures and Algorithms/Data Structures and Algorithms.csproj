@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8D8A575B-A2C4-435D-AAD4-FA18C5F72DF5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DSA</RootNamespace>
     <AssemblyName>DSA</AssemblyName>
@@ -46,7 +46,6 @@
     <Compile Include="Dictionary\ArrayDictionary.cs" />
     <Compile Include="Trees\AVLTree.cs" />
     <Compile Include="Trees\IBinarySearchTree.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

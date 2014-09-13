@@ -3,7 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-namespace Unit_Tests
+
+namespace Tests
 {
    [TestClass]
    public sealed class ArrayDictionaryTests

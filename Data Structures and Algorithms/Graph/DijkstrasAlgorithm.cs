@@ -6,12 +6,28 @@ using System.Linq;
 
 namespace DSA
 {
+   /// <summary>
+   /// Performs Dijkstra's Algorithm on any IGraph{T} implementation
+   /// </summary>
    public sealed class DijkstrasAlgorithm
    {
       private static readonly DijkstrasAlgorithm InstanceInternal = new DijkstrasAlgorithm();
 
+      /// <summary>
+      /// Gets the singleton instance.
+      /// </summary>
+      /// <value>
+      /// The instance.
+      /// </value>
       public static DijkstrasAlgorithm Instance { get { return InstanceInternal; } }
 
+      /// <summary>
+      /// Executes Dijkstra's Algorithm on the IGraph{T}
+      /// </summary>
+      /// <typeparam name="T">The type of values in the graph nodes</typeparam>
+      /// <param name="graph">The graph.</param>
+      /// <param name="initialNode">The initial node.</param>
+      /// <returns>A dictionary of costs between the initial node and all the other nodes</returns>
       public IDictionary<IGraphNode<T>, int> Execute<T>(IGraph<T> graph, IGraphNode<T> initialNode)
       {
          var tenativeDistances = new Dictionary<IGraphNode<T>, int>();

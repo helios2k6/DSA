@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace DSA.Dictionary
 {
+   /// <summary>
+   /// A hash map/dictionary that uses an array as a backing store for 
+   /// </summary>
+   /// <typeparam name="T"></typeparam>
+   /// <typeparam name="K"></typeparam>
    public class ArrayDictionary<T, K> : IDictionary<T, K>
    {
       private sealed class Bucket
@@ -143,6 +148,11 @@ namespace DSA.Dictionary
       private readonly int _bucketCount;
       private readonly Bucket[] _buckets;
 
+      /// <summary>
+      /// Initializes a new instance of the <see cref="ArrayDictionary{T, K}"/> class.
+      /// </summary>
+      /// <param name="seed">The initial enumerable key-value pairs to add to the map.</param>
+      /// <param name="bucketCount">The bucket count.</param>
       public ArrayDictionary(IEnumerable<KeyValuePair<T, K>> seed, int bucketCount)
       {
          _buckets = new Bucket[bucketCount];
@@ -154,12 +164,19 @@ namespace DSA.Dictionary
          }
       }
 
+      /// <summary>
+      /// Initializes a new instance of the <see cref="ArrayDictionary{T, K}"/> class.
+      /// </summary>
+      /// <param name="bucketCount">The bucket count.</param>
       public ArrayDictionary(int bucketCount)
       {
          _buckets = new Bucket[bucketCount];
          _bucketCount = bucketCount;
       }
 
+      /// <summary>
+      /// Initializes a new instance of the <see cref="ArrayDictionary{T, K}"/> class.
+      /// </summary>
       public ArrayDictionary()
          : this(50)
       {

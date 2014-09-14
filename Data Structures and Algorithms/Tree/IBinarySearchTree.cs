@@ -2,6 +2,10 @@
 
 namespace DSA.Tree
 {
+   /// <summary>
+   /// Represents a binary search tree
+   /// </summary>
+   /// <typeparam name="T"></typeparam>
    public interface IBinarySearchTree<T> where T : IComparable<T>, IEquatable<T>
    {
       /// <summary>

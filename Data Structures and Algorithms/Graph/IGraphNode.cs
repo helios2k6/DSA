@@ -9,7 +9,7 @@ namespace DSA.Graph
    /// </summary>
    /// <typeparam name="T">The type of value stored in the node</typeparam>
    /// <typeparam name="TWeight>The type of the weight</typeparam>
-   public interface IGraphNode<T>
+   public interface IGraphNode<T> : IEquatable<IGraphNode<T>>
    {
       /// <summary>
       /// Gets the value.
@@ -18,13 +18,5 @@ namespace DSA.Graph
       /// The value.
       /// </value>
       T Value { get; }
-
-      /// <summary>
-      /// Gets the edges incident to this graph node
-      /// </summary>
-      /// <value>
-      /// The edges.
-      /// </value>
-      IEnumerable<IGraphEdge<T>> Edges { get; }
    }
 }

@@ -3,13 +3,13 @@
 namespace DSA.Graph
 {
    /// <summary>
-   /// Represents an edge in a graph
+   /// Represents an edge in a graph.
    /// </summary>
-   /// <typeparam name="T">The type associated with the graph nodes</typeparam>
-   public interface IGraphEdge<T>
+   /// <typeparam name="T">The type associated with the graph nodes.</typeparam>
+   public interface IGraphEdge<T> : IEquatable<IGraphEdge<T>>
    {
       /// <summary>
-      /// Gets the start of the graph edge
+      /// Gets the start of the graph edge.
       /// </summary>
       /// <value>
       /// The start.
@@ -17,7 +17,7 @@ namespace DSA.Graph
       IGraphNode<T> Start { get; }
       
       /// <summary>
-      /// Gets the end of the graph edge
+      /// Gets the end of the graph edge.
       /// </summary>
       /// <value>
       /// The end.

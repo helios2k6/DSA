@@ -60,10 +60,6 @@ namespace DSA.Tree
       private long _size;
       #endregion
 
-      #region ctor
-
-      #endregion
-
       #region public properties
       /// <summary>
       /// The number of elements in this binary tree
@@ -125,6 +121,12 @@ namespace DSA.Tree
          return GetEnumerator();
       }
 
+      /// <summary>
+      /// Returns a <see cref="System.String" /> that represents this instance.
+      /// </summary>
+      /// <returns>
+      /// A <see cref="System.String" /> that represents this instance.
+      /// </returns>
       public override string ToString()
       {
          return string.Format("Binary Search Tree with {0} as Root", _root);

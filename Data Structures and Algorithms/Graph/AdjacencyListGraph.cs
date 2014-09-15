@@ -26,15 +26,35 @@ namespace DSA.Graph
 
          foreach (var edge in edges)
          {
-            ICollection<IGraphEdge<T>> collection;
-            if (_edges.TryGetValue(edge.Start, out collection) == false)
-            {
-               collection = new HashSet<IGraphEdge<T>>();
-               _edges[edge.Start] = collection;
-            }
-
-            collection.Add(edge);
+            ProcessEdge(edge);
          }
+      }
+
+      private void ProcessEdge(IGraphEdge<T> edge)
+      {
+         ICollection<IGraphEdge<T>> collection;
+         if (_edges.TryGetValue(edge.Start, out collection) == false)
+         {
+            collection = new HashSet<IGraphEdge<T>>();
+            _edges[edge.Start] = collection;
+         }
+
+         collection.Add(edge);
+
+         if (edge.IsDirected == false)
+         {
+            var reverseEdge = new GraphEdge<T>(edge.End, edge.Start, edge.Weight, false);
+            collection.Add(reverseEdge);
+         }
+      }
+
+      /// <summary>
+      /// Initializes a new instance of the <see cref="AdjacencyListGraph{T}"/> class.
+      /// </summary>
+      /// <param name="edges">The edges of the graph.</param>
+      public AdjacencyListGraph(IEnumerable<IGraphEdge<T>> edges)
+         : this(edges.Select(t => t.Start), edges)
+      {
       }
 
       /// <summary>

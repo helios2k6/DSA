@@ -10,11 +10,6 @@ namespace Tests
    [TestClass]
    public class GraphTests
    {
-      private static void TestBasicGraphActions<T>(IGraph<T> graph) where T : IEquatable<T>
-      {
-         
-      }
-
       /// <summary>
       /// Tests the matrix graph.
       /// </summary>
@@ -22,8 +17,9 @@ namespace Tests
       public void TestMatrixGraph()
       {
          var emptyGraph = new MatrixGraph<int>();
-         
 
+         var root = new GraphNode<int>(10);
+         var expandedGraph = root.MakeEdges<int>(null);
       }
 
       /// <summary>

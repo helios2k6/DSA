@@ -31,6 +31,16 @@ namespace DSA.Graph
          InitializeEdgeMatrix(_edgeMatrix, _nodeIndexMap, edges);
       }
 
+
+      /// <summary>
+      /// Initializes a new instance of the <see cref="MatrixGraph{T}"/> class.
+      /// </summary>
+      /// <param name="edges">The edges of the graph.</param>
+      public MatrixGraph(IEnumerable<IGraphEdge<T>> edges)
+         : this(edges.Select(t => t.Start), edges)
+      {
+      }
+
       /// <summary>
       /// Initializes a new instance of the <see cref="MatrixGraph{T}"/> class.
       /// </summary>
@@ -107,6 +117,11 @@ namespace DSA.Graph
             int edgeEndNode = indexMap[edge.End];
 
             edgeMatrix[edgeStartNode][edgeEndNode] = edge.Weight;
+
+            if (edge.IsDirected == false)
+            {
+               edgeMatrix[edgeEndNode][edgeStartNode] = edge.Weight;
+            }
          }
       }
 

@@ -43,8 +43,10 @@
     <Compile Include="Dictionary\ArrayDictionary.cs" />
     <Compile Include="Graph\GraphBase.cs" />
     <Compile Include="Graph\GraphEdge.cs" />
+    <Compile Include="Graph\GraphNode.cs" />
     <Compile Include="Graph\IGraph.cs" />
     <Compile Include="Graph\IGraphEdge.cs" />
+    <Compile Include="Graph\IGraphExtensions.cs" />
     <Compile Include="Tree\AVLTree.cs" />
     <Compile Include="Tree\IBinarySearchTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

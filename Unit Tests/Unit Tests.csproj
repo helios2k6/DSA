@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="ArrayDictionaryTests.cs" />
     <Compile Include="AVLTreeTests.cs" />
+    <Compile Include="GraphTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

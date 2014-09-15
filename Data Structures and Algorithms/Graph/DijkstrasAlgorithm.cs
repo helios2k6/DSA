@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
-using DSA.Graph;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DSA
+namespace DSA.Graph
 {
    /// <summary>
    /// Performs Dijkstra's Algorithm on any IGraph{T} implementation
@@ -28,7 +26,7 @@ namespace DSA
       /// <param name="graph">The graph.</param>
       /// <param name="initialNode">The initial node.</param>
       /// <returns>A dictionary of costs between the initial node and all the other nodes</returns>
-      public IDictionary<IGraphNode<T>, int> Execute<T>(IGraph<T> graph, IGraphNode<T> initialNode)
+      public IDictionary<IGraphNode<T>, int> Execute<T>(IGraph<T> graph, IGraphNode<T> initialNode) where T : IEquatable<T>
       {
          var tenativeDistances = new Dictionary<IGraphNode<T>, int>();
          tenativeDistances.Add(initialNode, 0);

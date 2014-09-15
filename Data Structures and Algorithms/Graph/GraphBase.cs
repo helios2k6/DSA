@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 namespace DSA.Graph
 {
    /// <summary>
    /// The base class for all IGraph{T} implementations. It provides all Equality facilities
    /// </summary>
    /// <typeparam name="T">The type of the value stored in the graph nodes</typeparam>
-   public abstract class GraphBase<T> : IGraph<T>
+   public abstract class GraphBase<T> : IGraph<T> where T : IEquatable<T>
    {
       private bool EqualsPreamble(object other)
       {

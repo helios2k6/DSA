@@ -7,7 +7,7 @@ namespace DSA.Graph
    /// <summary>
    /// Represents a Graph
    /// </summary>
-   public interface IGraph<T> : IEquatable<IGraph<T>>
+   public interface IGraph<T> : IEquatable<IGraph<T>> where T : IEquatable<T>
    {
       /// <summary>
       /// Gets the graph nodes.

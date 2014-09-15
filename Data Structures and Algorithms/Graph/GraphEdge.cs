@@ -1,9 +1,10 @@
-﻿namespace DSA.Graph
+﻿using System;
+namespace DSA.Graph
 {
    /// <summary>
    /// Represents a graph edge
    /// </summary>
-   public class GraphEdge<T> : IGraphEdge<T>
+   public class GraphEdge<T> : IGraphEdge<T> where T : IEquatable<T>
    {
       public GraphEdge(IGraphNode<T> start, IGraphNode<T> end, int weight, bool isDirected)
       {

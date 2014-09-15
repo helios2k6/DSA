@@ -1,16 +1,15 @@
 ﻿using System;
-using DSA.Graph;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DSA
+namespace DSA.Graph
 {
    /// <summary>
    /// Represents a graph using a boolean 2D matrix
    /// </summary>
    /// <typeparam name="T">The type stored in the graph nodes</typeparam>
-   public sealed class MatrixGraph<T> : GraphBase<T>
+   public sealed class MatrixGraph<T> : GraphBase<T> where T : IEquatable<T>
    {
       private readonly ISet<IGraphNode<T>> _nodes;
       private readonly int?[][] _edgeMatrix;

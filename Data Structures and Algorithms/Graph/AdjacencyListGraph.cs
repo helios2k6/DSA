@@ -1,16 +1,15 @@
 ﻿using System;
-using DSA.Graph;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DSA
+namespace DSA.Graph
 {
    /// <summary>
    /// Represents a graph using an adjacency list for edge management.
    /// </summary>
    /// <typeparam name="T">The type stored within the graph nodes.</typeparam>
-   public sealed class AdjacencyListGraph<T> : GraphBase<T>
+   public sealed class AdjacencyListGraph<T> : GraphBase<T> where T : IEquatable<T>
    {
       private readonly ISet<IGraphNode<T>> _nodes;
       private readonly IDictionary<IGraphNode<T>, ICollection<IGraphEdge<T>>> _edges;
